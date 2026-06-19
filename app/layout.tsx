@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { ClerkThemeProvider } from "@/providers/clerk-theme-provider";
 import { AIChatbot } from "@/components/ai/ai-chatbot";
 import "./globals.css";
 
@@ -56,10 +55,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkThemeProvider>
-            {children}
-            <AIChatbot />
-          </ClerkThemeProvider>
+          {children}
+          <AIChatbot />
         </ThemeProvider>
       </body>
     </html>

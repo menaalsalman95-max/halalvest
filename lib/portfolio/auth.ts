@@ -1,9 +1,6 @@
-import { auth } from "@clerk/nextjs/server";
+/** Default local user for the portfolio simulator (no auth required). */
+export const DEMO_USER_ID = "demo-user";
 
 export async function requireUserId(): Promise<string> {
-  const { userId } = await auth();
-  if (!userId) {
-    throw new Error("Unauthorized");
-  }
-  return userId;
+  return DEMO_USER_ID;
 }

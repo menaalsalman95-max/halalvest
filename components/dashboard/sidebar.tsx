@@ -9,7 +9,7 @@ import {
   BookOpen,
   Calculator,
   Settings,
-  LogOut,
+  Home,
   ChevronLeft,
   Menu,
   Wallet,
@@ -17,7 +17,6 @@ import {
   History,
 } from "lucide-react";
 import { useState } from "react";
-import { SignOutButton } from "@clerk/nextjs";
 import { Logo } from "@/components/branding/logo";
 import { cn } from "@/lib/utils";
 
@@ -80,18 +79,17 @@ export function DashboardSidebar() {
       </nav>
 
       <div className="border-t border-zinc-200/80 p-3 dark:border-zinc-800/80">
-        <SignOutButton redirectUrl="/">
-          <button
-            type="button"
-            className={cn(
-              "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100/80 dark:text-zinc-400 dark:hover:bg-zinc-800/60",
-              collapsed && "justify-center px-2"
-            )}
-          >
-            <LogOut className="h-4 w-4 shrink-0" />
-            {!collapsed && "Sign Out"}
-          </button>
-        </SignOutButton>
+        <Link
+          href="/"
+          onClick={() => setMobileOpen(false)}
+          className={cn(
+            "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100/80 dark:text-zinc-400 dark:hover:bg-zinc-800/60",
+            collapsed && "justify-center px-2"
+          )}
+        >
+          <Home className="h-4 w-4 shrink-0" />
+          {!collapsed && "Back to Home"}
+        </Link>
       </div>
     </>
   );

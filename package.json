@@ -12,8 +12,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^7.4.2",
-    "@clerk/themes": "^2.4.57",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "lightweight-charts": "^5.2.0",
